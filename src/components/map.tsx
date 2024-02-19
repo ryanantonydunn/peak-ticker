@@ -26,7 +26,11 @@ interface Peak {
   url: string;
 }
 
-export default function Map() {
+interface Props {
+  search: string;
+}
+
+export default function Map(props: Props) {
   return (
     <MapContainer
       center={[54.5272, -3.0161]}
@@ -37,14 +41,22 @@ export default function Map() {
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
-      <Peaks />
+      <Peaks {...props} />
     </MapContainer>
   );
 }
 
-function Peaks() {
+function Peaks({ search }: Props) {
   const map = useMap();
   const [peaks, setPeaks] = React.useState<Peak[]>([]);
+
+  const filteredPeaks = React.useMemo(() => {
+    if (!search) return peaks;
+
+    return peaks.filter((peak) =>
+      peak.name.toLowerCase().includes(search.toLowerCase())
+    );
+  }, [search, peaks]);
 
   // load peaks
   React.useEffect(() => {
@@ -84,6 +96,11 @@ function Peaks() {
     [loggedPeaks]
   );
 
+  // ticked peaks
+  const tickedPeaks = React.useMemo(() => {
+    return filteredPeaks.filter((peak) => loggedPeaks.includes(peak.id)).length;
+  }, [loggedPeaks, filteredPeaks]);
+
   // show or hide permanenet tooltips on zoom
   const [zoom, setZoom] = React.useState(0);
   const mapEvents = useMapEvents({
@@ -117,53 +134,74 @@ function Peaks() {
   );
   React.useEffect(() => {
     setLastHoveredPeak(null);
-  }, [peaks]);
+  }, [filteredPeaks]);
 
-  return peaks.map((peak, i) => {
-    const isOpen = areTooltipsPermanenet || lastHoveredPeak === i;
-    return (
-      <CircleMarker
-        key={peak.id}
-        center={[peak.latitude, peak.longitude]}
-        pathOptions={{ color: loggedPeaks.includes(peak.id) ? "blue" : "red" }}
-        radius={10}
-        eventHandlers={{
-          mouseover: (e) => {
-            // bring tooltips to front when hovering
-            e.sourceTarget.bringToFront();
+  return (
+    <>
+      {filteredPeaks.map((peak, i) => {
+        const isOpen = areTooltipsPermanenet || lastHoveredPeak === i;
+        return (
+          <CircleMarker
+            key={peak.id}
+            center={[peak.latitude, peak.longitude]}
+            pathOptions={{
+              color: loggedPeaks.includes(peak.id) ? "blue" : "red",
+            }}
+            radius={10}
+            eventHandlers={{
+              mouseover: (e) => {
+                // bring tooltips to front when hovering
+                e.sourceTarget.bringToFront();
 
-            // set this as last hovered peak
-            setLastHoveredPeak(i);
-          },
+                // set this as last hovered peak
+                setLastHoveredPeak(i);
+              },
+            }}
+          >
+            {isOpen && (
+              <Tooltip permanent interactive direction="right" offset={[9, 0]}>
+                <div className="flex items-center">
+                  <input
+                    type="checkbox"
+                    checked={loggedPeaks.includes(peak.id)}
+                    className="w-4 h-4 mr-2"
+                    onChange={() => {
+                      toggleLoggedPeak(peak.id);
+                    }}
+                  />
+                  {peak.name} (<b>{peak.height}m</b>){" "}
+                  {peak.url && (
+                    <small className="pl-2">
+                      <a
+                        target="_blank"
+                        href={peak.url}
+                        title="more information about this peak"
+                      >
+                        link
+                      </a>
+                    </small>
+                  )}
+                </div>
+              </Tooltip>
+            )}
+          </CircleMarker>
+        );
+      })}
+      <div
+        style={{
+          position: "absolute",
+          right: 0,
+          top: 0,
+          background: "rgb(var(--color-background))",
+          padding: 10,
+          zIndex: 999999,
         }}
       >
-        {isOpen && (
-          <Tooltip permanent interactive direction="right" offset={[9, 0]}>
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                checked={loggedPeaks.includes(peak.id)}
-                className="w-4 h-4 mr-2"
-                onChange={() => {
-                  toggleLoggedPeak(peak.id);
-                }}
-              />
-              {peak.name} (<b>{peak.height}m</b>){" "}
-              {peak.url && (
-                <small className="pl-2">
-                  <a
-                    target="_blank"
-                    href={peak.url}
-                    title="more information about this peak"
-                  >
-                    link
-                  </a>
-                </small>
-              )}
-            </div>
-          </Tooltip>
-        )}
-      </CircleMarker>
-    );
-  });
+        Ticked:{" "}
+        <b>
+          {tickedPeaks} / {filteredPeaks.length}
+        </b>
+      </div>
+    </>
+  );
 }
