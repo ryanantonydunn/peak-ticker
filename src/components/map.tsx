@@ -1,3 +1,4 @@
+import { Peak } from "@/store/types";
 import {
   getLocalLoggedPeaks,
   setLocalLoggedPeaks,
@@ -15,16 +16,6 @@ import {
   useMap,
   useMapEvents,
 } from "react-leaflet";
-
-interface Peak {
-  id: number;
-  name: string;
-  type: string;
-  height: string;
-  latitude: number;
-  longitude: number;
-  url: string;
-}
 
 interface Props {
   search: string;
