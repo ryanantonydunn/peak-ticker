@@ -1,14 +1,7 @@
-// export enum Action {
-//   "SET_SEARCH",
-//   "SET_TYPE",
-//   "TOGGLE_PEAK_TICK",
-//   "SET_PEAKS",
-// }
-
 export type PeakType = "wainwright" | "munro";
 
 export interface Peak {
-  id: number;
+  id: string;
   name: string;
   type: string;
   height: string;
@@ -18,13 +11,18 @@ export interface Peak {
 }
 
 export interface PeakTick {
-  id: number;
+  id: string;
   date: string;
 }
 
-// export interface State {
-//   search: string;
-//   type: PeakType;
-//   ticks: PeakTick[];
-//   peaks: Peak[];
-// }
+export interface Store {
+  search: string;
+  type: PeakType;
+  ticks: PeakTick[];
+  peaks: Peak[];
+  setSearch: (search: string) => void;
+  setType: (type: PeakType) => void;
+  togglePeakTick: (peakId: string) => void;
+  setPeaks: (peaks: Peak[]) => void;
+  setTicks: (ticks: PeakTick[]) => void;
+}
