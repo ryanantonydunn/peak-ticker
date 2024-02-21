@@ -1,3 +1,5 @@
+"use client";
+
 import { useFilteredPeaks, useTickedPeaks } from "@/store/hooks";
 import { useStore } from "@/store/store";
 import "leaflet-defaulticon-compatibility";

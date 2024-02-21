@@ -1,12 +1,11 @@
+"use client";
+
 import { useTickedPeaksCount } from "@/store/hooks";
 import { useStore } from "@/store/store";
 import { PeakType } from "@/store/types";
-import "leaflet-defaulticon-compatibility";
-import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
-import "leaflet/dist/leaflet.css";
 import React from "react";
 
-export default function Search() {
+export function Search() {
   const { search, setSearch, type, setType } = useStore((state) => ({
     search: state.search,
     setSearch: state.setSearch,

@@ -1,23 +1,9 @@
-"use client";
-
-import Search from "@/components/search";
-import dynamic from "next/dynamic";
-import React from "react";
+import { TickerDynamic } from "@/components/ticker-dynamic";
 
 export default function Home() {
-  const Map = React.useMemo(
-    () =>
-      dynamic(() => import("@/components/map"), {
-        loading: () => <span>Loading...</span>,
-        ssr: false,
-      }),
-    []
-  );
-
   return (
     <main className="screen-h">
-      <Map />
-      <Search />
+      <TickerDynamic />
     </main>
   );
 }
