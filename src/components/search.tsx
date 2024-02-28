@@ -15,25 +15,31 @@ export function Search() {
   const tickCount = useTickedPeaksCount();
   return (
     <div
-      className="absolute bottom-0 left-0 p-2 bg-gray-800 flex items-center"
+      className="absolute bottom-0 left-0 p-2 bg-gray-800 flex items-center text-xs"
       style={{ zIndex: 999 }}
     >
-      <select
-        name="type"
-        value={type}
-        onChange={(e) => setType(e.target.value as PeakType)}
-        className="bg-gray-700 text-white p-1 text-lg"
-      >
-        <option value="wainwright">Wainwrights</option>
-        <option value="munro">Munros</option>
-      </select>
-      <input
-        name="search"
-        className="bg-gray-700 text-white p-1 text-lg ml-2"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
-      <span className="pl-2 text-xs">
+      <div>
+        Type:&nbsp;
+        <select
+          name="type"
+          value={type}
+          onChange={(e) => setType(e.target.value as PeakType)}
+          className="bg-gray-700 text-white p-1 text-xs"
+        >
+          <option value="wainwright">Wainwrights</option>
+          <option value="munro">Munros</option>
+        </select>
+      </div>
+      <div className="ml-2">
+        Filter:&nbsp;
+        <input
+          name="search"
+          className="bg-gray-700 text-white p-1 text-xs"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+      <span className="pl-2">
         Ticked:{" "}
         <b>
           {tickCount.ticked} / {tickCount.total}
