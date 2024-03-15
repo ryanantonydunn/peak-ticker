@@ -1,28 +1,57 @@
-export type PeakType = "wainwright" | "munro";
+export type PinType = "hill" | "crag";
 
-export interface Peak {
-  id: string;
+export interface PinListOption {
   name: string;
-  type: string;
+  slug: string;
+  pinType: PinType;
+}
+
+export interface RouteHill {
+  id: string;
+  pinId: string;
+  name: string;
   height: string;
-  latitude: number;
-  longitude: number;
   url: string;
 }
 
-export interface PeakTick {
+export interface RouteCrag {
+  id: string;
+  pinId: string;
+  name: string;
+  stars: string;
+  grade: string;
+}
+
+export type Route = RouteHill | RouteCrag;
+
+export interface CsvPin {
+  id: string;
+  name: string;
+  latitude: number;
+  longitude: number;
+}
+
+export type Pin = CsvPin & {
+  routeHills: RouteHill[];
+  routeCrags: RouteCrag[];
+};
+
+export interface RouteTick {
+  pinType: string;
   id: string;
   date: string;
 }
 
 export interface Store {
   search: string;
-  type: PeakType;
-  ticks: PeakTick[];
-  peaks: Peak[];
+  options: PinListOption[];
+  optionIndex: number;
+  ticks: RouteTick[];
+  pins: Pin[];
   setSearch: (search: string) => void;
-  setType: (type: PeakType) => void;
-  togglePeakTick: (peakId: string) => void;
-  setPeaks: (peaks: Peak[]) => void;
-  setTicks: (ticks: PeakTick[]) => void;
+  setOptions: (options: PinListOption[]) => void;
+  setOptionIndex: (i: number) => void;
+  toggleTick: (id: string, pinType: string) => void;
+  setPins: (pins: Pin[]) => void;
+  setTicks: (ticks: RouteTick[]) => void;
 }

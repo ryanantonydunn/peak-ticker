@@ -1,18 +1,36 @@
 "use client";
 
-import { useTickedPeaksCount } from "@/store/hooks";
+import { useOptions, useTickCount } from "@/store/hooks";
 import { useStore } from "@/store/store";
-import { PeakType } from "@/store/types";
+import { PinListOption } from "@/store/types";
 import React from "react";
 
+const titles: { [key: string]: string } = {
+  hill: "Hills",
+  crag: "Climbs",
+};
+
 export function Search() {
-  const { search, setSearch, type, setType } = useStore((state) => ({
-    search: state.search,
-    setSearch: state.setSearch,
-    type: state.type,
-    setType: state.setType,
-  }));
-  const tickCount = useTickedPeaksCount();
+  const options = useOptions();
+  const { search, setSearch, optionIndex, setOptionIndex } = useStore(
+    (state) => ({
+      search: state.search,
+      setSearch: state.setSearch,
+      optionIndex: state.optionIndex,
+      setOptionIndex: state.setOptionIndex,
+    })
+  );
+  const tickCount = useTickCount();
+
+  const groups = React.useMemo(() => {
+    const obj: { [key: string]: [PinListOption, number][] } = {};
+    options.forEach((opt, i) => {
+      if (!obj[opt.pinType]) obj[opt.pinType] = [];
+      obj[opt.pinType].push([opt, i]);
+    });
+    return obj;
+  }, [options]);
+
   return (
     <div
       className="absolute bottom-0 left-0 p-2 bg-gray-800 flex items-center text-xs"
@@ -22,12 +40,19 @@ export function Search() {
         Type:&nbsp;
         <select
           name="type"
-          value={type}
-          onChange={(e) => setType(e.target.value as PeakType)}
-          className="bg-gray-700 text-white p-1 text-xs"
+          value={optionIndex}
+          onChange={(e) => setOptionIndex(Number(e.target.value))}
+          className="bg-gray-700 text-white p-1 text-xs w-32"
         >
-          <option value="wainwright">Wainwrights</option>
-          <option value="munro">Munros</option>
+          {Object.entries(groups).map(([pinType, options]) => (
+            <optgroup key={pinType} label={titles[pinType] || ""}>
+              {options.map(([option, originalIndex]) => (
+                <option value={originalIndex} key={originalIndex}>
+                  {option.name}
+                </option>
+              ))}
+            </optgroup>
+          ))}
         </select>
       </div>
       <div className="ml-2">

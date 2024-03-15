@@ -1,7 +1,7 @@
 "use client";
 
 import { useStore } from "@/store/store";
-import { removeDuplicateTicks } from "@/utils/remove-duplicate-ticks";
+import { RouteTick } from "@/store/types";
 import React from "react";
 
 export function EditTicks() {
@@ -14,7 +14,9 @@ export function EditTicks() {
   // create editable string from tick objects
   const [textareaString, setTextareaString] = React.useState("");
   const baseTextareaString = React.useMemo(() => {
-    const newString = ticks.map((peak) => `${peak.id},${peak.date}`).join("\n");
+    const newString = ticks
+      .map((tick) => `${tick.id},${tick.date},${tick.pinType}`)
+      .join("\n");
     setTextareaString(newString);
     return newString;
   }, [ticks]);
@@ -23,11 +25,14 @@ export function EditTicks() {
   const [error, setError] = React.useState("");
   const save = React.useCallback(() => {
     try {
-      // convert ticks to peak objects
-      const newTicks = textareaString.split("\n").map((str) => {
-        const [id, date] = str.split(",");
-        const newDate = date ? new Date(date) : new Date();
-        return { id, date: newDate.toISOString() };
+      // convert ticks to route objects
+      const newTicks: RouteTick[] = [];
+      textareaString.split("\n").forEach((str) => {
+        const [id, date, pinType] = str.split(",");
+        if (id !== undefined && ["hill", "crag"].includes(pinType)) {
+          const newDate = date ? new Date(date) : new Date();
+          newTicks.push({ id, date: newDate.toISOString(), pinType });
+        }
       });
 
       setTicks(removeDuplicateTicks(newTicks));
@@ -91,4 +96,48 @@ export function EditTicks() {
       )}
     </div>
   );
+}
+
+/**
+ * Remove any ticks in the list that are duplicates
+ */
+export function removeDuplicateTicks(ticks: RouteTick[]): RouteTick[] {
+  // build object of all index instances of all peak ID's
+  const idIndexes: { [key: string]: number[] } = {}; // { [pinType-id]: [indexes of instances] }
+  ticks.forEach((tick, i) => {
+    const key = `${tick.pinType}-${tick.id}`;
+    if (!idIndexes[key]) idIndexes[key] = [];
+    idIndexes[key].push(i);
+  });
+
+  // build new array of all indexes to be removed
+  // take all duplicate ID indexes that are not the last in the list of instances
+  const indexesToBeRemoved: number[] = [];
+  Object.values(idIndexes).forEach((indexes) => {
+    indexesToBeRemoved.push(...indexes.slice(0, -1));
+  });
+
+  // sort indexes to be removed by highest first to avoid conflicts
+  // eg: if we splice index 2 and now what was at index 5 is now at index 4
+  const sortedIndexes = indexesToBeRemoved.sort((a, b) => b - a);
+
+  // make alert of all duplicated being remove
+  if (sortedIndexes.length > 0) {
+    alert(
+      `Removing duplicate entries:\n${sortedIndexes
+        .map(
+          (i) =>
+            `Peak ID ${ticks[i].id} and pin type ${ticks[i].pinType} at index ${i}`
+        )
+        .join("\n")}`
+    );
+  }
+
+  // duplicate ticklist and remove indexes
+  const newTicks = [...ticks];
+  sortedIndexes.forEach((i) => {
+    newTicks.splice(i, 1);
+  });
+
+  return newTicks;
 }

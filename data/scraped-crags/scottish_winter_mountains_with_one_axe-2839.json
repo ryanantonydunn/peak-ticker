@@ -1,0 +1,302 @@
+{
+  "name": "UKCScottish winter mountains with one axe.",
+  "slug": "scottish_winter_mountains_with_one_axe-2839",
+  "crags": [
+    {
+      "id": "24",
+      "lat": 56.9551,
+      "lng": -3.237,
+      "name": "Lochnagar",
+      "routes": [
+        { "id": "5585", "name": "The Black Spout", "stars": "**", "grade": "I" }
+      ]
+    },
+    {
+      "id": "25",
+      "lat": 57.1065,
+      "lng": -3.6594,
+      "name": "Cairn Gorm - Stob Coire an t-Sneachda",
+      "routes": [
+        { "id": "2369", "name": "Fiacaill Ridge", "stars": "**", "grade": "II" }
+      ]
+    },
+    {
+      "id": "178",
+      "lat": 56.95197,
+      "lng": -4.60207,
+      "name": "Creag Meagaidh",
+      "routes": [
+        {
+          "id": "88664",
+          "name": "Raeburn's Gully",
+          "stars": "***",
+          "grade": "I"
+        }
+      ]
+    },
+    {
+      "id": "387",
+      "lat": 56.6461,
+      "lng": -4.9004,
+      "name": "Buachaille Etive Mor",
+      "routes": [
+        {
+          "id": "143538",
+          "name": "The Chasm To Crowberry Traverse (Winter)",
+          "stars": "*",
+          "grade": "II"
+        }
+      ]
+    },
+    {
+      "id": "562",
+      "lat": 56.67945,
+      "lng": -5.03752,
+      "name": "Aonach Eagach - Sgorr nam Fiannaidh",
+      "routes": [
+        {
+          "id": "47797",
+          "name": "Aonach Eagach Ridge (Winter)",
+          "stars": "***",
+          "grade": "II"
+        }
+      ]
+    },
+    {
+      "id": "715",
+      "lat": 57.5641,
+      "lng": -5.4636,
+      "name": "Liathach - Spidean a' Choire Leith ",
+      "routes": [
+        {
+          "id": "42002",
+          "name": "Main Ridge Traverse (winter)",
+          "stars": "***",
+          "grade": "II"
+        }
+      ]
+    },
+    {
+      "id": "774",
+      "lat": 57.5861,
+      "lng": -5.4383,
+      "name": "Beinn Eighe",
+      "routes": [
+        {
+          "id": "151532",
+          "name": "The Black Carls (Summer)",
+          "stars": "*",
+          "grade": "Grade-1"
+        }
+      ]
+    },
+    {
+      "id": "2137",
+      "lat": 56.64613,
+      "lng": -5.03711,
+      "name": "Bidean nam Bian - Stob Coire nam Beith",
+      "routes": [
+        { "id": "35141", "name": "Summit Gully", "stars": "**", "grade": "II" }
+      ]
+    },
+    {
+      "id": "2519",
+      "lat": 57.44226,
+      "lng": -5.66163,
+      "name": "Beinn Bhan",
+      "routes": [
+        {
+          "id": "83940",
+          "name": "A'Chioch Traverse",
+          "stars": "***",
+          "grade": "II"
+        }
+      ]
+    },
+    {
+      "id": "2551",
+      "lat": 57.2481,
+      "lng": -6.1924,
+      "name": "Sgurr nan Gillean",
+      "routes": [
+        {
+          "id": "41565",
+          "name": "Southeast Ridge (Winter)",
+          "stars": "",
+          "grade": "I"
+        },
+        {
+          "id": "83569",
+          "name": "West Ridge (Winter)",
+          "stars": "*",
+          "grade": "II"
+        }
+      ]
+    },
+    {
+      "id": "2580",
+      "lat": 56.65389,
+      "lng": -5.1717,
+      "name": "Beinn a' Bheithir - Sgorr Dhearg",
+      "routes": [
+        {
+          "id": "146071",
+          "name": "East-northeast Ridge (Winter)",
+          "stars": "*",
+          "grade": "II"
+        },
+        {
+          "id": "146556",
+          "name": "Ballachulish Horseshoe",
+          "stars": "",
+          "grade": "I"
+        }
+      ]
+    },
+    {
+      "id": "3443",
+      "lat": 57.49853,
+      "lng": -5.40778,
+      "name": "Sgorr Ruadh",
+      "routes": [
+        {
+          "id": "149886",
+          "name": "Academy Ridge (Winter)",
+          "stars": "*",
+          "grade": "II"
+        },
+        {
+          "id": "149891",
+          "name": "Post Box Gully",
+          "stars": "***",
+          "grade": "II"
+        }
+      ]
+    },
+    {
+      "id": "9678",
+      "lat": 56.80521,
+      "lng": -4.98664,
+      "name": "Carn Mor Dearg",
+      "routes": [
+        {
+          "id": "118946",
+          "name": "Carn Dearg Meadhonach East Ridge (Winter)",
+          "stars": "",
+          "grade": "II"
+        }
+      ]
+    },
+    {
+      "id": "9928",
+      "lat": 56.63831,
+      "lng": -5.01052,
+      "name": "Stob Coire Sgreamhach",
+      "routes": [
+        {
+          "id": "148413",
+          "name": "Northeast Ridge via Beinn Fhada",
+          "stars": "*",
+          "grade": "II"
+        }
+      ]
+    },
+    {
+      "id": "12867",
+      "lat": 57.12515,
+      "lng": -5.22133,
+      "name": "Aonach air Chrith",
+      "routes": [
+        {
+          "id": "314274",
+          "name": "North Ridge (winter)",
+          "stars": "*",
+          "grade": "I"
+        }
+      ]
+    },
+    {
+      "id": "13023",
+      "lat": 57.5912,
+      "lng": -5.57307,
+      "name": "Beinn Alligin - Sgurr Mor",
+      "routes": [
+        {
+          "id": "38796",
+          "name": "Deep South Gully",
+          "stars": "***",
+          "grade": "I"
+        }
+      ]
+    },
+    {
+      "id": "13056",
+      "lat": 57.8071,
+      "lng": -5.252,
+      "name": "An Teallach - Bidein a' Ghlas Thuill",
+      "routes": [
+        {
+          "id": "115654",
+          "name": "Hayfork Gully",
+          "stars": "***",
+          "grade": "I"
+        },
+        {
+          "id": "185543",
+          "name": "An Teallach Ridge (Winter)",
+          "stars": "***",
+          "grade": "II"
+        }
+      ]
+    },
+    {
+      "id": "14765",
+      "lat": 57.58808,
+      "lng": -5.45127,
+      "name": "Beinn Eighe - Sail Mhor",
+      "routes": [
+        {
+          "id": "150121",
+          "name": "Morrison's Gully (No.1 Gully)",
+          "stars": "*",
+          "grade": "I"
+        }
+      ]
+    },
+    {
+      "id": "14788",
+      "lat": 57.1619,
+      "lng": -5.4168,
+      "name": "The Saddle",
+      "routes": [
+        {
+          "id": "43540",
+          "name": "Forcan Ridge (Winter)",
+          "stars": "***",
+          "grade": "I/II"
+        }
+      ]
+    },
+    {
+      "id": "16877",
+      "lat": 56.79686,
+      "lng": -5.00382,
+      "name": "Ben Nevis",
+      "routes": [
+        {
+          "id": "499",
+          "name": "South Castle Gully",
+          "stars": "***",
+          "grade": "II"
+        },
+        { "id": "610", "name": "Ledge Route", "stars": "***", "grade": "II" },
+        {
+          "id": "144164",
+          "name": "Carn Mor Dearg Arete",
+          "stars": "",
+          "grade": "Grade-1"
+        }
+      ]
+    }
+  ]
+}

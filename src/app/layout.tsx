@@ -4,7 +4,7 @@ import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Peak Ticker",
-  description: "Tick climbed peaks easily",
+  description: "Tick off routes easily",
 };
 
 export default function RootLayout({

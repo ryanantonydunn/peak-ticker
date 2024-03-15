@@ -1,0 +1,735 @@
+{
+  "name": "Classic Rock",
+  "slug": "classic_rock-8",
+  "crags": [
+    {
+      "id": "4",
+      "lat": 53.0917,
+      "lng": -4.0489,
+      "name": "Dinas Cromlech",
+      "routes": [
+        {
+          "id": "3188",
+          "name": "Spiral Stairs",
+          "stars": "***",
+          "grade": "VD"
+        },
+        {
+          "id": "3212",
+          "name": "Flying Buttress",
+          "stars": "***",
+          "grade": "VD"
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "lat": 56.9551,
+      "lng": -3.237,
+      "name": "Lochnagar",
+      "routes": [
+        {
+          "id": "5560",
+          "name": "Eagle Ridge (Summer)",
+          "stars": "***",
+          "grade": "S"
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "lat": 57.09555,
+      "lng": -3.65889,
+      "name": "Hell's Lum",
+      "routes": [
+        {
+          "id": "4766",
+          "name": "The Clean Sweep",
+          "stars": "***",
+          "grade": "VS"
+        }
+      ]
+    },
+    {
+      "id": "31",
+      "lat": 51.4644,
+      "lng": -2.6299,
+      "name": "Avon Gorge (Main Area)",
+      "routes": [
+        { "id": "32335", "name": "Piton Route", "stars": "**", "grade": "VS" }
+      ]
+    },
+    {
+      "id": "33",
+      "lat": 57.0766,
+      "lng": -3.6315,
+      "name": "Ben Macdui - Creagan a' Choire Etchachan",
+      "routes": [
+        {
+          "id": "2953",
+          "name": "The Talisman (Summer)",
+          "stars": "***",
+          "grade": "HS"
+        }
+      ]
+    },
+    {
+      "id": "43",
+      "lat": 56.9098,
+      "lng": -4.5259,
+      "name": "Binnein Shuas",
+      "routes": [
+        {
+          "id": "670",
+          "name": "Ardverikie Wall",
+          "stars": "***",
+          "grade": "HS"
+        }
+      ]
+    },
+    {
+      "id": "74",
+      "lat": 57.10271,
+      "lng": -3.676,
+      "name": "Cairn Gorm - Cairn Lochan",
+      "routes": [
+        {
+          "id": "31325",
+          "name": "Savage Slit (Summer)",
+          "stars": "***",
+          "grade": "S"
+        }
+      ]
+    },
+    {
+      "id": "94",
+      "lat": 53.25111,
+      "lng": -1.58333,
+      "name": "Birchen Edge",
+      "routes": [
+        {
+          "id": "11225",
+          "name": "Sail Buttress",
+          "stars": "**",
+          "grade": "HS"
+        },
+        { "id": "11229", "name": "Topsail", "stars": "**", "grade": "VS" },
+        {
+          "id": "11246",
+          "name": "Powder Monkey Parade",
+          "stars": "**",
+          "grade": "S"
+        }
+      ]
+    },
+    {
+      "id": "104",
+      "lat": 53.3458,
+      "lng": -1.6319,
+      "name": "Stanage Popular",
+      "routes": [
+        {
+          "id": "10340",
+          "name": "Hargreaves' Original",
+          "stars": "***",
+          "grade": "VS"
+        },
+        { "id": "10342", "name": "April Crack", "stars": "***", "grade": "HS" },
+        {
+          "id": "10370",
+          "name": "Flying Buttress",
+          "stars": "***",
+          "grade": "HVD"
+        }
+      ]
+    },
+    {
+      "id": "105",
+      "lat": 53.15713,
+      "lng": -1.99257,
+      "name": "Roaches Lower Tier",
+      "routes": [
+        { "id": "16007", "name": "Via Dolorosa", "stars": "***", "grade": "VS" }
+      ]
+    },
+    {
+      "id": "198",
+      "lat": 50.07739,
+      "lng": -5.70853,
+      "name": "Sennen",
+      "routes": [
+        { "id": "30513", "name": "Demo Route", "stars": "***", "grade": "HS" }
+      ]
+    },
+    {
+      "id": "199",
+      "lat": 50.17564,
+      "lng": -5.62005,
+      "name": "Bosigran",
+      "routes": [
+        { "id": "845", "name": "Doorpost", "stars": "***", "grade": "HS" }
+      ]
+    },
+    {
+      "id": "201",
+      "lat": 53.0928,
+      "lng": -4.05634,
+      "name": "Carreg Wastad",
+      "routes": [
+        { "id": "1721", "name": "The Wrinkle", "stars": "**", "grade": "VD" },
+        { "id": "1738", "name": "Crackstone Rib", "stars": "***", "grade": "S" }
+      ]
+    },
+    {
+      "id": "202",
+      "lat": 53.0941,
+      "lng": -4.061,
+      "name": "Clogwyn y Grochan",
+      "routes": [{ "id": "2240", "name": "Nea", "stars": "**", "grade": "VS" }]
+    },
+    {
+      "id": "206",
+      "lat": 50.4558,
+      "lng": -4.0594,
+      "name": "The Dewerstone",
+      "routes": [
+        {
+          "id": "26070",
+          "name": "Climbers' Club Ordinary",
+          "stars": "**",
+          "grade": "VS"
+        }
+      ]
+    },
+    {
+      "id": "218",
+      "lat": 50.0366,
+      "lng": -5.6814,
+      "name": "Chair Ladder",
+      "routes": [
+        {
+          "id": "1955",
+          "name": "Pendulum Chimney",
+          "stars": "***",
+          "grade": "S"
+        },
+        {
+          "id": "2005",
+          "name": "Terrier's Tooth",
+          "stars": "***",
+          "grade": "HS"
+        }
+      ]
+    },
+    {
+      "id": "345",
+      "lat": 54.4531,
+      "lng": -3.1153,
+      "name": "Gimmer Crag",
+      "routes": [
+        {
+          "id": "4186",
+          "name": "Ash Tree Slabs",
+          "stars": "***",
+          "grade": "VD"
+        },
+        { "id": "4203", "name": "'C' Route", "stars": "***", "grade": "S" },
+        {
+          "id": "4206",
+          "name": "Bracket and Slab Climb",
+          "stars": "***",
+          "grade": "VS"
+        }
+      ]
+    },
+    {
+      "id": "349",
+      "lat": 54.44774,
+      "lng": -3.16634,
+      "name": "Bowfell",
+      "routes": [
+        {
+          "id": "1074",
+          "name": "Bowfell Buttress",
+          "stars": "***",
+          "grade": "HS"
+        }
+      ]
+    },
+    {
+      "id": "355",
+      "lat": 54.3703,
+      "lng": -3.1366,
+      "name": "Dow Crag",
+      "routes": [
+        { "id": "3367", "name": "Murray's Route", "stars": "***", "grade": "S" }
+      ]
+    },
+    {
+      "id": "373",
+      "lat": 53.9364,
+      "lng": -1.5933,
+      "name": "Almscliff",
+      "routes": [
+        {
+          "id": "54",
+          "name": "Parson's Chimney",
+          "stars": "***",
+          "grade": "HS"
+        }
+      ]
+    },
+    {
+      "id": "387",
+      "lat": 56.6461,
+      "lng": -4.9004,
+      "name": "Buachaille Etive Mor",
+      "routes": [
+        {
+          "id": "1187",
+          "name": "North Face Route",
+          "stars": "*",
+          "grade": "S"
+        },
+        {
+          "id": "1215",
+          "name": "Agag's Groove (Summer)",
+          "stars": "***",
+          "grade": "VD"
+        },
+        {
+          "id": "63947",
+          "name": "The Chasm (Summer)",
+          "stars": "***",
+          "grade": "VS"
+        }
+      ]
+    },
+    {
+      "id": "491",
+      "lat": 53.11495,
+      "lng": -3.9976,
+      "name": "Tryfan",
+      "routes": [
+        {
+          "id": "5739",
+          "name": "Direct Route",
+          "stars": "***",
+          "grade": "HVD"
+        },
+        { "id": "5741", "name": "Pulpit Route", "stars": "**", "grade": "VD" },
+        {
+          "id": "29169",
+          "name": "Grooved Arête",
+          "stars": "***",
+          "grade": "HVD"
+        },
+        { "id": "41530", "name": "Gashed Crag", "stars": "**", "grade": "VD" },
+        {
+          "id": "46853",
+          "name": "Overlapping Ridge Route (First Pinnacle Rib)",
+          "stars": "**",
+          "grade": "D"
+        }
+      ]
+    },
+    {
+      "id": "494",
+      "lat": 53.1048,
+      "lng": -4.0084,
+      "name": "Glyder Fach",
+      "routes": [
+        { "id": "85392", "name": "Direct Route", "stars": "***", "grade": "VS" }
+      ]
+    },
+    {
+      "id": "496",
+      "lat": 53.10995,
+      "lng": -4.02542,
+      "name": "Idwal Slabs (aka Cwm Idwal)",
+      "routes": [
+        { "id": "28785", "name": "Hope", "stars": "***", "grade": "VD" },
+        { "id": "28786", "name": "Lazarus", "stars": "***", "grade": "S" },
+        { "id": "28787", "name": "The Arete", "stars": "**", "grade": "VD" }
+      ]
+    },
+    {
+      "id": "497",
+      "lat": 53.1029,
+      "lng": -4.028,
+      "name": "Glyder Fawr",
+      "routes": [
+        { "id": "29215", "name": "Grey Slab", "stars": "***", "grade": "VS" }
+      ]
+    },
+    {
+      "id": "519",
+      "lat": 54.4975,
+      "lng": -3.2812,
+      "name": "Pillar",
+      "routes": [
+        {
+          "id": "6373",
+          "name": "Rib and Slab Climb",
+          "stars": "***",
+          "grade": "HS"
+        },
+        {
+          "id": "6374",
+          "name": "New West Climb",
+          "stars": "***",
+          "grade": "VD"
+        }
+      ]
+    },
+    {
+      "id": "530",
+      "lat": 53.1544,
+      "lng": -3.9544,
+      "name": "Craig Yr Ysfa",
+      "routes": [
+        { "id": "29168", "name": "Great Gully", "stars": "***", "grade": "S" }
+      ]
+    },
+    {
+      "id": "534",
+      "lat": 56.64285,
+      "lng": -5.02948,
+      "name": "Bidean nam Bian",
+      "routes": [
+        { "id": "645", "name": "Crypt Route", "stars": "***", "grade": "VD" }
+      ]
+    },
+    {
+      "id": "562",
+      "lat": 56.67945,
+      "lng": -5.03752,
+      "name": "Aonach Eagach - Sgorr nam Fiannaidh",
+      "routes": [
+        {
+          "id": "37498",
+          "name": "Clachaig Gully (Summer)",
+          "stars": "***",
+          "grade": "S"
+        }
+      ]
+    },
+    {
+      "id": "594",
+      "lat": 56.21299,
+      "lng": -4.80816,
+      "name": "The Cobbler",
+      "routes": [
+        {
+          "id": "8112",
+          "name": "Punster's Crack (Summer)",
+          "stars": "***",
+          "grade": "S"
+        },
+        {
+          "id": "8121",
+          "name": "Recess Route (Summer)",
+          "stars": "***",
+          "grade": "S"
+        },
+        {
+          "id": "8132",
+          "name": "Ardgartan Arête",
+          "stars": "**",
+          "grade": "VS"
+        }
+      ]
+    },
+    {
+      "id": "662",
+      "lat": 54.48,
+      "lng": -3.2194,
+      "name": "The Napes",
+      "routes": [
+        {
+          "id": "8184",
+          "name": "The Wasdale Crack",
+          "stars": "***",
+          "grade": "HS"
+        },
+        { "id": "8190", "name": "Needle Ridge", "stars": "***", "grade": "VD" },
+        { "id": "8209", "name": "Tophet Wall", "stars": "***", "grade": "HS" }
+      ]
+    },
+    {
+      "id": "680",
+      "lat": 54.4497,
+      "lng": -3.219,
+      "name": "Scafell Crag",
+      "routes": [
+        {
+          "id": "6988",
+          "name": "Moss Ghyll Grooves",
+          "stars": "***",
+          "grade": "VS"
+        },
+        {
+          "id": "7004",
+          "name": "Jone's Route Direct from Lord's Rake",
+          "stars": "***",
+          "grade": "HS"
+        }
+      ]
+    },
+    {
+      "id": "682",
+      "lat": 57.2058,
+      "lng": -6.2248,
+      "name": "Cuillin Ridge (Traverse)",
+      "routes": [
+        {
+          "id": "38155",
+          "name": "Cuillin Ridge Traverse (Summer)",
+          "stars": "***",
+          "grade": "VD"
+        }
+      ]
+    },
+    {
+      "id": "695",
+      "lat": 53.0842,
+      "lng": -4.0708,
+      "name": "Cyrn Las (Gyrn Las)",
+      "routes": [
+        { "id": "28749", "name": "Main Wall", "stars": "***", "grade": "HS" }
+      ]
+    },
+    {
+      "id": "699",
+      "lat": 53.08583,
+      "lng": -4.05028,
+      "name": "Dinas Mot",
+      "routes": [
+        { "id": "3254", "name": "The Cracks", "stars": "***", "grade": "HS" }
+      ]
+    },
+    {
+      "id": "747",
+      "lat": 54.5561,
+      "lng": -3.1397,
+      "name": "Shepherd’s Crag",
+      "routes": [
+        {
+          "id": "7567",
+          "name": "Little Chamonix",
+          "stars": "***",
+          "grade": "VD"
+        }
+      ]
+    },
+    {
+      "id": "748",
+      "lat": 54.5444,
+      "lng": -3.1394,
+      "name": "Black Crag (Borrowdale)",
+      "routes": [
+        {
+          "id": "695",
+          "name": "Troutdale Pinnacle",
+          "stars": "***",
+          "grade": "S"
+        }
+      ]
+    },
+    {
+      "id": "763",
+      "lat": 54.5019,
+      "lng": -3.2021,
+      "name": "Gillercombe",
+      "routes": [
+        {
+          "id": "4165",
+          "name": "Gillercombe Buttress",
+          "stars": "***",
+          "grade": "S"
+        }
+      ]
+    },
+    {
+      "id": "772",
+      "lat": 57.4179,
+      "lng": -5.6891,
+      "name": "Sgurr a' Chaorachain",
+      "routes": [
+        { "id": "7431", "name": "Cioch Nose", "stars": "***", "grade": "VD" }
+      ]
+    },
+    {
+      "id": "780",
+      "lat": 57.2022,
+      "lng": -6.2342,
+      "name": "Sron na Ciche",
+      "routes": [
+        { "id": "7735", "name": "Cioch Direct", "stars": "*", "grade": "S" },
+        { "id": "7739", "name": "Arrow Route", "stars": "***", "grade": "VD" },
+        { "id": "7741", "name": "Integrity", "stars": "***", "grade": "VS" }
+      ]
+    },
+    {
+      "id": "797",
+      "lat": 53.1582,
+      "lng": -1.9926,
+      "name": "Roaches Upper Tier",
+      "routes": [
+        {
+          "id": "20091",
+          "name": "Black and Tans",
+          "stars": "***",
+          "grade": "S"
+        },
+        {
+          "id": "20095",
+          "name": "Technical Slab",
+          "stars": "***",
+          "grade": "HS"
+        }
+      ]
+    },
+    {
+      "id": "817",
+      "lat": 52.9403,
+      "lng": -4.1475,
+      "name": "Craig y Castell (Tremadog)",
+      "routes": [
+        {
+          "id": "2736",
+          "name": "Creagh Dhu Wall",
+          "stars": "***",
+          "grade": "HS"
+        }
+      ]
+    },
+    {
+      "id": "899",
+      "lat": 53.1519,
+      "lng": -1.9893,
+      "name": "Hen Cloud",
+      "routes": [
+        {
+          "id": "16124",
+          "name": "Central Climb",
+          "stars": "***",
+          "grade": "VS"
+        },
+        { "id": "16126", "name": "K2", "stars": "**", "grade": "S" },
+        { "id": "16130", "name": "Modern", "stars": "**", "grade": "VS" }
+      ]
+    },
+    {
+      "id": "1113",
+      "lat": 51.18222,
+      "lng": -4.66889,
+      "name": "Lundy",
+      "routes": [
+        {
+          "id": "31090",
+          "name": "The Devil's Slide",
+          "stars": "***",
+          "grade": "HS"
+        }
+      ]
+    },
+    {
+      "id": "1214",
+      "lat": 53.05939,
+      "lng": -4.05691,
+      "name": "Y Lliwedd",
+      "routes": [
+        {
+          "id": "29152",
+          "name": "Avalanche/Red Wall/Longlands",
+          "stars": "**",
+          "grade": "S"
+        }
+      ]
+    },
+    {
+      "id": "1322",
+      "lat": 54.1559,
+      "lng": -2.2487,
+      "name": "Pen-y-ghent",
+      "routes": [
+        {
+          "id": "33106",
+          "name": "Red Pencil Direct",
+          "stars": "***",
+          "grade": "HS"
+        }
+      ]
+    },
+    {
+      "id": "2263",
+      "lat": 52.7561,
+      "lng": -3.7128,
+      "name": "Craig Cywarch (aka Craig Cowarch)",
+      "routes": [
+        {
+          "id": "40744",
+          "name": "Will o' the Wisp",
+          "stars": "***",
+          "grade": "HVD"
+        }
+      ]
+    },
+    {
+      "id": "13421",
+      "lat": 55.6388,
+      "lng": -5.2218,
+      "name": "Cir Mhor",
+      "routes": [
+        {
+          "id": "2090",
+          "name": "Sou'wester Slabs",
+          "stars": "***",
+          "grade": "VD"
+        },
+        { "id": "50590", "name": "Labyrinth", "stars": "*", "grade": "VS" }
+      ]
+    },
+    {
+      "id": "14629",
+      "lat": 57.0913,
+      "lng": -3.4745,
+      "name": "Beinn a' Bhuird - Cnap a' Chleirich",
+      "routes": [
+        { "id": "33547", "name": "Squareface", "stars": "***", "grade": "VD" },
+        {
+          "id": "33944",
+          "name": "Cumming-Crofton Route (Summer)",
+          "stars": "***",
+          "grade": "S"
+        }
+      ]
+    },
+    {
+      "id": "16877",
+      "lat": 56.79686,
+      "lng": -5.00382,
+      "name": "Ben Nevis",
+      "routes": [
+        {
+          "id": "556",
+          "name": "The Long Climb",
+          "stars": "***",
+          "grade": "VS"
+        },
+        { "id": "563", "name": "Tower Ridge", "stars": "***", "grade": "D" }
+      ]
+    },
+    {
+      "id": "23162",
+      "lat": 56.65501,
+      "lng": -5.02823,
+      "name": "Aonach Dubh",
+      "routes": [
+        { "id": "150", "name": "The Long Crack", "stars": "**", "grade": "S" },
+        { "id": "34877", "name": "Archer Ridge", "stars": "***", "grade": "S" }
+      ]
+    }
+  ]
+}
