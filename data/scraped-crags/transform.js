@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("fs");
+const { csvToString } = require("../utils/csv");
 
 const cragListHeaders = ["slug", "name", "pinType"];
 
@@ -25,9 +26,7 @@ function processScrapedCragData(fileName) {
     crag.lng,
   ]);
   const srcCrag = path.join(__dirname, "../../public/data", `pins-${type}.csv`);
-  const contentCrags = [pinHeaders, ...crags, []]
-    .map((row) => row.join(","))
-    .join("\n");
+  const contentCrags = csvToString([pinHeaders, ...crags, []]);
   fs.writeFileSync(srcCrag, contentCrags);
 
   // extract routes into csv
@@ -42,9 +41,7 @@ function processScrapedCragData(fileName) {
     "../../public/data",
     `routes-${type}.csv`
   );
-  const contentRoutes = [routeHeaders, ...routes, []]
-    .map((row) => row.join(","))
-    .join("\n");
+  const contentRoutes = csvToString([routeHeaders, ...routes, []]);
   fs.writeFileSync(srcRoute, contentRoutes);
 }
 
@@ -58,7 +55,5 @@ const srcCragList = path.join(
   "../../public/data",
   `pin-list-crags.csv`
 );
-const contentCragList = [cragListHeaders, ...cragList, []]
-  .map((row) => row.join(","))
-  .join("\n");
+const contentCragList = csvToString([cragListHeaders, ...cragList, []]);
 fs.writeFileSync(srcCragList, contentCragList);

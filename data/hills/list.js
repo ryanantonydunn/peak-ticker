@@ -1,6 +1,7 @@
 const path = require("path");
 const Papa = require("papaparse");
 const fs = require("fs");
+const { csvToString } = require("../utils/csv");
 
 // Data sourced from https://www.hills-database.co.uk/downloads.html
 
@@ -14,9 +15,7 @@ async function extractItems(data, matcher, type) {
     .filter((row) => row[matcher] === 1)
     .map((row) => [row.Number, "", row.Latitude, row.Longitude]);
   const pinSrc = path.join(__dirname, "../../public/data", `pins-${type}.csv`);
-  const pinContent = [pinHeaders, ...pinRows, []]
-    .map((row) => row.join(","))
-    .join("\n");
+  const pinContent = csvToString([pinHeaders, ...pinRows, []]);
   fs.writeFileSync(pinSrc, pinContent);
 
   // write route CSV
@@ -34,9 +33,7 @@ async function extractItems(data, matcher, type) {
     "../../public/data",
     `routes-${type}.csv`
   );
-  const routeContent = [routeHeaders, ...routeRows, []]
-    .map((row) => row.join(","))
-    .join("\n");
+  const routeContent = csvToString([routeHeaders, ...routeRows, []]);
   fs.writeFileSync(routeSrc, routeContent);
 }
 
