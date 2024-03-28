@@ -36,6 +36,12 @@ export type Pin = CsvPin & {
   routeCrags: RouteCrag[];
 };
 
+export type CombinedPin = {
+  latitude: number;
+  longitude: number;
+  pins: Pin[];
+};
+
 export interface RouteTick {
   pinType: string;
   id: string;
@@ -47,11 +53,11 @@ export interface Store {
   options: PinListOption[];
   optionIndex: number;
   ticks: RouteTick[];
-  pins: Pin[];
+  pins: CombinedPin[];
   setSearch: (search: string) => void;
   setOptions: (options: PinListOption[]) => void;
   setOptionIndex: (i: number) => void;
   toggleTick: (id: string, pinType: string) => void;
-  setPins: (pins: Pin[]) => void;
+  setPins: (pins: CombinedPin[]) => void;
   setTicks: (ticks: RouteTick[]) => void;
 }

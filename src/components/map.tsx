@@ -90,7 +90,7 @@ function Items() {
     const isOpen = areTooltipsPermanenet || lastHoveredPin === i;
     return (
       <CircleMarker
-        key={pin.id}
+        key={pin.pins[0].id}
         center={[pin.latitude, pin.longitude]}
         pathOptions={{
           color: getPinColor(pin),
@@ -108,55 +108,64 @@ function Items() {
       >
         {isOpen && (
           <Tooltip permanent interactive direction="right" offset={[9, 0]}>
-            {pin.name && <h3 className="pb-1 font-bold">{pin.name}</h3>}
-            {pin.routeHills.map((hill) => (
-              <div className="flex items-center pb-1" key={hill.id}>
-                <input
-                  type="checkbox"
-                  name={`item-tick-${hill.id}`}
-                  checked={isRouteTicked(hill)}
-                  className="w-4 h-4 mr-2"
-                  onChange={() => {
-                    toggleTick(hill.id, option.pinType);
-                  }}
-                />
-                {hill.name} (<b>{hill.height}m</b>){" "}
-                {hill.url && (
-                  <small className="pl-2">
-                    <a
-                      target="_blank"
-                      href={hill.url}
-                      title="more information about this item"
-                    >
-                      link
-                    </a>
-                  </small>
+            {pin.pins.map((subPin) => (
+              <React.Fragment key={subPin.id}>
+                {subPin.name && (
+                  <h3 className="pb-1 font-bold">{subPin.name}</h3>
                 )}
-              </div>
-            ))}
-            {pin.routeCrags.map((climb) => (
-              <div className="flex items-center pb-1 last:pb-0" key={climb.id}>
-                <input
-                  type="checkbox"
-                  name={`item-tick-${climb.id}`}
-                  checked={isRouteTicked(climb)}
-                  className="w-4 h-4 mr-2"
-                  onChange={() => {
-                    toggleTick(climb.id, option.pinType);
-                  }}
-                />
-                {climb.name}
-                {climb.stars} (<b>{climb.grade}</b>)&nbsp;
-                <small className="pl-2">
-                  <a
-                    target="_blank"
-                    href={`https://www.ukclimbing.com/logbook/c.php?i=${climb.id}`}
-                    title="View on UKC"
+                {subPin.routeHills.map((hill) => (
+                  <div className="flex items-center pb-1" key={hill.id}>
+                    <input
+                      type="checkbox"
+                      name={`item-tick-${hill.id}`}
+                      checked={isRouteTicked(hill)}
+                      className="w-4 h-4 mr-2"
+                      onChange={() => {
+                        toggleTick(hill.id, option.pinType);
+                      }}
+                    />
+                    {hill.name} (<b>{hill.height}m</b>){" "}
+                    {hill.url && (
+                      <small className="pl-2">
+                        <a
+                          target="_blank"
+                          href={hill.url}
+                          title="more information about this item"
+                        >
+                          link
+                        </a>
+                      </small>
+                    )}
+                  </div>
+                ))}
+                {subPin.routeCrags.map((climb) => (
+                  <div
+                    className="flex items-center pb-1 last:pb-0"
+                    key={climb.id}
                   >
-                    UKC
-                  </a>
-                </small>
-              </div>
+                    <input
+                      type="checkbox"
+                      name={`item-tick-${climb.id}`}
+                      checked={isRouteTicked(climb)}
+                      className="w-4 h-4 mr-2"
+                      onChange={() => {
+                        toggleTick(climb.id, option.pinType);
+                      }}
+                    />
+                    {climb.name}
+                    {climb.stars} (<b>{climb.grade}</b>)&nbsp;
+                    <small className="pl-2">
+                      <a
+                        target="_blank"
+                        href={`https://www.ukclimbing.com/logbook/c.php?i=${climb.id}`}
+                        title="View on UKC"
+                      >
+                        UKC
+                      </a>
+                    </small>
+                  </div>
+                ))}
+              </React.Fragment>
             ))}
           </Tooltip>
         )}

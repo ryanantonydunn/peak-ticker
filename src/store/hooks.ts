@@ -1,7 +1,16 @@
 import Papa from "papaparse";
 import React from "react";
 import { useStore } from "./store";
-import { Pin, PinListOption, Route, RouteCrag, RouteHill } from "./types";
+import {
+  CombinedPin,
+  Pin,
+  PinListOption,
+  Route,
+  RouteCrag,
+  RouteHill,
+} from "./types";
+import { latLng } from "leaflet";
+import { getRoutesFromCombinedPin, setMidPoint } from "./helpers";
 
 const papaOptions = { header: true, dynamicTyping: true };
 
@@ -85,7 +94,35 @@ export const usePins = () => {
             option.pinType === "hill" ? (routeRows as RouteHill[]) : [],
         };
       });
-      setPins(newPins);
+
+      // combined pins that are close together
+      const combinedPins: CombinedPin[] = [];
+      LoopPins: for (let pi = 0; pi < newPins.length; pi++) {
+        const newPin = newPins[pi];
+        for (let ci = 0; ci < combinedPins.length; ci++) {
+          const comparePin = combinedPins[ci];
+          const newLatlng = latLng([newPin.latitude, newPin.longitude]);
+          const compareLatlng = latLng([
+            comparePin.latitude,
+            comparePin.longitude,
+          ]);
+          const distance = newLatlng.distanceTo(compareLatlng);
+          // combine with other pin if close by
+          if (distance < 400) {
+            comparePin.pins.push(newPin);
+            setMidPoint(comparePin);
+            continue LoopPins;
+          }
+        }
+        // create new combined pin if not found any close ones
+        combinedPins.push({
+          latitude: newPin.latitude,
+          longitude: newPin.longitude,
+          pins: [newPin],
+        });
+      }
+
+      setPins(combinedPins);
     }
     load();
   }, [option, setPins]);
@@ -108,10 +145,10 @@ export const useFilteredPins = () => {
       str && str.toLowerCase().includes(search.toLowerCase());
 
     return pins.filter((pin) => {
-      if (isMatch(pin.name)) {
+      if (pin.pins.some((p) => isMatch(p.name))) {
         return true;
       }
-      const routes = [...pin.routeCrags, ...pin.routeHills];
+      const routes = getRoutesFromCombinedPin(pin);
       if (routes.some((route) => isMatch(route.name))) {
         return true;
       }
@@ -145,7 +182,7 @@ export const useTickCount = () => {
   let total = 0;
   let ticked = 0;
   pins.forEach((pin) => {
-    const routes = [...pin.routeCrags, ...pin.routeHills];
+    const routes = getRoutesFromCombinedPin(pin);
     total += routes.length;
     routes.forEach((route) => {
       if (isRouteTicked(route)) {
@@ -163,8 +200,8 @@ export const useGetPinColor = () => {
   const isRouteTicked = useIsRouteTicked();
 
   return React.useCallback(
-    (pin: Pin) => {
-      const routes = [...pin.routeCrags, ...pin.routeHills];
+    (pin: CombinedPin) => {
+      const routes = getRoutesFromCombinedPin(pin);
       if (routes.every(isRouteTicked)) {
         return "blue";
       } else if (routes.some(isRouteTicked)) {
